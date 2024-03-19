@@ -5,9 +5,18 @@ import { MyAccount } from "../Components/MyAccount.jsx"
 import { NewAppointment } from "../Components/NewAppt.jsx"
 import { ShopHours } from "../Components/ShopHours.jsx"
 import { OurTeam } from "../Components/OurTeam.jsx"
+import { useEffect, useState } from "react"
+import { MyScheduledAppt } from "../Components/ScheduledAppt.jsx"
+
 
 
 export const ApplicationViews = () => {
+  const [currentUser, setCurrentUser] = useState({})
+
+  useEffect(() => {
+    setCurrentUser(JSON.parse(localStorage.getItem("user")));
+  }, [])
+  
 
     return (
         <Routes>  
@@ -22,7 +31,11 @@ export const ApplicationViews = () => {
 
          <Route path="/shopHours" element={<ShopHours/>}></Route>
          <Route path="/myAccount" element={<MyAccount/>}></Route>
-         <Route path="/newAppointment" element={<NewAppointment/>}></Route>
+         <Route path="/newAppointment">
+            <Route index element={<NewAppointment currentUser={currentUser}  />}/>
+            <Route path=":myscheduledapptId" element={<MyScheduledAppt/>}/>
+            </Route>
+
          <Route path="/ourTeam" element={<OurTeam/>}></Route>    
          
               
