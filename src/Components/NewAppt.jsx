@@ -72,7 +72,7 @@ export const NewAppointment = ({currentUser}) => {
 
 
   return (
-    <div className="welcome-container">
+    <div className="appointment-container">
       <h1>
         <span>Newark Barber Shop</span>
       </h1>
@@ -80,7 +80,7 @@ export const NewAppointment = ({currentUser}) => {
 
       <div>
         <select required
-          className="barbers"
+          className="barber"
           value={selectedBarber}
           onChange={selectedBarberChange}
         >
@@ -97,7 +97,7 @@ export const NewAppointment = ({currentUser}) => {
         <p>Barber: {selectedBarber} </p>
       </div>
 
-    <div>
+      <div>
       <label value="month"/>
         <select required id="month" value={selectedMonth} onChange={selectedMonthChange}>
             <option value="">Select Month</option>
@@ -107,9 +107,9 @@ export const NewAppointment = ({currentUser}) => {
         </select>
 
         <p>Month: {selectedMonth}</p>
-    </div>
+      </div>
                 
-    <div>
+      <div>
       <label value="day"/>
         <select required id="day" value={selectedDay} onChange={selectedDayChange}>
             <option value="">Select Day</option>
@@ -118,9 +118,9 @@ export const NewAppointment = ({currentUser}) => {
             ))}
         </select>
         <p>Day: {selectedDay}</p>
-    </div>
+      </div>
 
-    <div>
+      <div>
       <label value="times"/>
         <select required id="times" value={selectedTime} onChange={selectedTimeChange}>
             <option value="">Select Time</option>
@@ -129,13 +129,13 @@ export const NewAppointment = ({currentUser}) => {
             ))}
         </select>
         <p>Time: {selectedTime}</p>
-    </div>
+      </div>
 
-    <div>
-    <button className="submit_button" onClick={()=>{
+      <div>
+      <button className="submit_button" onClick={()=>{
         submitNewAppointment()
-    }}>Save Appointment</button>
-    </div>
+      }}>Save Appointment</button>
+      </div>
 
     </div>
 

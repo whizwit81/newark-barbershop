@@ -1,13 +1,28 @@
-import"./OurTeam.css"
+import { useEffect } from "react";
+import { useState } from "react";
+import { NeededBarber, getBarbers } from "../Services/UserService.jsx";
+import { useParams } from "react-router-dom";
 
-export const OurTeam = () => {
-    return (
-        <div className="welcome-container">
-            <h1>
 
-                <span>Newark Barber Shop</span>
-            </h1>
-            <div>Meet Our Team!</div>
-        </div>
-    )
-}
+export const BarberList = () => {
+  const [barbers, setBarbers] = useState([]);
+
+
+  useEffect(() => {
+    getBarbers().then((barberArray) => {
+      setBarbers(barberArray);
+    });
+  }, []);
+
+  return (
+    <div className="barber-header">
+      {barbers.map((barberObj) => {
+        return (
+          <div className="each-barber"  key={barberObj.id}>
+            <NeededBarber barber={barberObj} />
+            </div>
+        );
+      })}
+    </div>
+  );
+};
