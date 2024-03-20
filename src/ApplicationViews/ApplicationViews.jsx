@@ -33,7 +33,7 @@ export const ApplicationViews = () => {
          <Route path="/myAccount" element={<MyAccount/>}></Route>
          <Route path="/newAppointment">
             <Route index element={<NewAppointment currentUser={currentUser}  />}/>
-            <Route path=":myscheduledapptId" element={<MyScheduledAppt/>}/>
+            <Route path=":myscheduledappt" element={<MyScheduledAppt currentUser={currentUser}/>}/>
             </Route>
 
          <Route path="/ourTeam" element={<OurTeam/>}></Route>    

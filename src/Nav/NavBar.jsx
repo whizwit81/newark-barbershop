@@ -24,14 +24,13 @@ const navigate = useNavigate()
 
 
 
-        
-        {localStorage.getItem("customer_user") ? (
+        {localStorage.getItem("user") ? (
             <li className="navbar-item navbar-logout">
               <Link
                 className="navbar-link"
                 to=""
                 onClick={() => {
-                    localStorage.removeItem("customer_user")
+                    localStorage.removeItem("user")
                     navigate("/", { replace: true })
                 }}
             >

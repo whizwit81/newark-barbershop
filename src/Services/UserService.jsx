@@ -8,8 +8,6 @@ export const getUserByEmail = (email) => {
     )
   }
 
-
-  
   export const createUser = (customer) => {
     return fetch("http://localhost:8088/users", {
       method: "POST",
