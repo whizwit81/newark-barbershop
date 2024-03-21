@@ -21,6 +21,7 @@ export const BarberList = () => {
           <div className="each-barber"  key={barberObj.id}>
             <NeededBarber barber={barberObj} />
             </div>
+            
         );
       })}
     </div>
