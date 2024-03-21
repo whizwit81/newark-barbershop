@@ -7,6 +7,7 @@ import { ShopHours } from "../Components/ShopHours.jsx"
 import { BarberList } from "../Components/OurTeam.jsx"
 import { useEffect, useState } from "react"
 import { MyScheduledAppt } from "../Components/ScheduledAppt.jsx"
+import { EditDropDownAppointment } from "../Components/EditAppointment.jsx"
 
 
 
@@ -31,9 +32,17 @@ export const ApplicationViews = () => {
 
          <Route path="/shopHours" element={<ShopHours/>}></Route>
          <Route path="/myAccount" element={<MyAccount currentUser={currentUser}/>}></Route>
+         
+         <Route path="/editAppointment" element={<EditDropDownAppointment currentUser={currentUser}/>}>
+            <Route index element={<NewAppointment currentUser={currentUser}  />}/>
+            <Route path=":updatedAppt" element={<EditDropDownAppointment currentUser={currentUser}/>}/>
+
+         </Route>
+
          <Route path="/newAppointment">
             <Route index element={<NewAppointment currentUser={currentUser}  />}/>
             <Route path=":myscheduledappt" element={<MyScheduledAppt currentUser={currentUser}/>}/>
+
          </Route>
 
          <Route path="/ourTeam" element={<BarberList/>}></Route>    
@@ -46,3 +55,4 @@ export const ApplicationViews = () => {
 
 
 }
+{/* <Route path="/editAppointment" element={<EditDropDownAppointment currentUser={currentUser}/>}></Route> */}

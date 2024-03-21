@@ -46,6 +46,11 @@ export const NeededBarber = ({barber}) => {
               <div>{barber?.email}</div>
           </div>
 
+          <div>
+            <div className="barber-info"></div>
+              <div>{barber?.bio}</div>
+          </div>
+
         </div>
 
   )
