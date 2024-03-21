@@ -7,3 +7,4 @@ export const createAppointment = (newAppointment) => {
                 body: JSON.stringify(newAppointment)
     })
 }
+
