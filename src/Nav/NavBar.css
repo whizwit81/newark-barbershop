@@ -1,23 +1,22 @@
 .navbar {
   display: flex;
   flex-wrap: nowrap;
-  background-color: var(--dark);
-  margin: 0;
+  margin-top: -30;
   padding: 0.5rem;
   border: 5ex;
-  margin: 3rem 5rem;
-  border: 1px solid var(--outline);
+  /* margin: 3rem 5rem; */
   border-radius: 10px;
   padding: 1rem 0rem 0rem 1rem;
   box-shadow: 1px 2px 5px lightgray;
   background-color: rgb(99, 66, 5);
+  /* flex-direction: row; */
 }
 
 .navbar-item {
   flex-basis: 20%;
   list-style-type: none;
   text-align: center;
-  color: var(--offWhite);
+  
 }
 
 .navbar-link {
@@ -34,6 +33,6 @@
   margin-left: auto;
 }
 
-.navbar-link:hover {
-  color: var(--primary);
-}
+/* .navbar-link:hover {
+ 
+} */

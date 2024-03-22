@@ -1,20 +1,23 @@
 .container-login {
+  display: flex;
   text-align: center;
+  justify-content: center;
+  margin-top: 175px;
 }
 
 .container-login > section > a {
   text-decoration: underline;
-  color: var(--secondary);
+  text-align: center;
 }
 
 .form-login {
   width: 60%;
   background-color: white;
+  
 }
 
 .form-login > h1 {
   font-size: 2.5rem;
-  text-align: center;
 }
 
 .form-login > h2 {
@@ -40,7 +43,6 @@ form {
   border-radius: 10px;
   padding: 1rem 0rem 0rem 1rem;
   box-shadow: 1px 2px 5px lightgray;
-  background-color: var(--offWhite);
 }
 
 fieldset {
@@ -56,7 +58,7 @@ fieldset {
   font-size: 1rem;
   border-radius: 0.25rem;
   border-color: bl;
-  margin:auto
+  margin: auto;
 }
 
 .form-group {
@@ -73,4 +75,9 @@ fieldset {
   box-shadow: none;
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.noaccount {
+  color: red;
+  font-size: large;
 }

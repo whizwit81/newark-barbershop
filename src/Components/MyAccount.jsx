@@ -10,27 +10,27 @@ const [appointments, setAppointments] = useState([])
 const [userName, setUserName] = useState([])
 
 const {appointmentId} = useParams()
-const navigate = useNavigate()
+
 
 useEffect(() => {
     if(currentUser.id){
     getUsers(currentUser).then((data) => {
+        setUserName(data)
             
-            setUserName(data)
     })}
 }, [currentUser])
 
 
 const whoCaresRefreshPlease =()=> {
     getAppointments(appointmentId).then((data) => {
-        const appointmentObj = data
-      setAppointments(appointmentObj);
+        const appointmentObj = data.filter((data) => data.userId === currentUser.id)
+        setAppointments(appointmentObj);
     });
 }
 
 useEffect(() => {
     getAppointments(appointmentId).then((data) => {
-            const appointmentObj = data
+        const appointmentObj = data.filter((data) => data.userId === currentUser.id)
           setAppointments(appointmentObj);
         });
       }, [appointmentId]);
@@ -41,32 +41,31 @@ useEffect(() => {
             whoCaresRefreshPlease()
         })}
 
-    return (
-        <div className="myaccount-container">
-            <h1>
+        return (
+            <div className="myaccount-container">
+                <h1>
+                    <span>Newark Barber Shop</span>
+                </h1>
+                <div className="welcome-user">    
+                    <div key={userName.name}>Welcome {userName.name}!</div>
+                </div>
+                <div>
+                    <div className="user-appointments">
+                        {appointments.length === 0 ? (
+                            <div><h2>You have no appointments scheduled</h2></div>
+                        ) : (
+                        appointments.map(appointment => (
+                        <div key={appointment.id}>
 
-                <span>Newark Barber Shop</span>
-            </h1>
-            <div className="welcome-user">    
-                <div key={userName.name} >Welcome {userName.name}!</div>
-           </div>
-
-           <div>
-           
-           <div className="user-appointments">`{appointments.map(appointment => {
-
-            return (
-                <>
-               <Link to={`/editAppointment/${appointment.id}`}><div key={appointment.id}>
-                You're scheduled with: {appointment.barber} on {appointment.month}{appointment.day} at {appointment.time}</div>
-                </Link>
-                <button type="button" onClick={(event)=> handleDelete(appointment, event)}>🗑️</button>
-                </>
-                    
-            )
-           })}</div>
-          
-        </div> 
+                        <Link to={`/editAppointment/${appointment.id}`}>
+                        You're scheduled with: {appointment.barber} on {appointment.month} {appointment.day} at {appointment.time}
+                        </Link>
+                        <button type="button" onClick={(event) => handleDelete(appointment, event)}>🗑️</button>
+                    </div>
+                    ))
+                )}
+                </div>
+            </div> 
         </div>
-    )
+        )
 }
