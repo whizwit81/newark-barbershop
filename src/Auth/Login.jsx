@@ -54,12 +54,12 @@ export const Login = () => {
               <button className="login-btn btn-info" type="submit">
                 Sign in
               </button>
+              <section className="noaccount">
+        <Link to="/register">Don't have an account?</Link>
+      </section>
             </div>
           </fieldset>
         </form>
-      </section>
-      <section>
-        <Link to="/register">Don't have an account?</Link>
       </section>
     </main>
   )

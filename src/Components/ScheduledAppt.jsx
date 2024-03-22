@@ -3,18 +3,28 @@ import { getAppointments } from "../Services/ScheduledApptService.jsx";
 // import"./MyAccount.css"
 import { useParams } from "react-router-dom";
 import "./ScheduledAppt.css"
+import { getUsers } from "../Services/UserService.jsx";
 
 
-export const MyScheduledAppt = () => {
+export const MyScheduledAppt = ({currentUser}) => {
 const [appointments, setAppointments] = useState([])
+const [userName, setUserName] = useState([])
 
 
 const {appointmentId} = useParams()
 
+useEffect(() => {
+    if(currentUser.id){
+    getUsers(currentUser).then((data) => {
+        setUserName(data)
+            
+    })}
+}, [currentUser])
+
 
 useEffect(() => {
     getAppointments(appointmentId).then((data) => {
-            const appointmentObj = data
+        const appointmentObj = data.filter((data) => data.userId === currentUser.id)
           setAppointments(appointmentObj);
         });
       }, [appointmentId]);
