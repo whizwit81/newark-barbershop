@@ -1,10 +1,12 @@
-.appointment-container {
-    margin: 2rem auto;
-    width: 60%;
-    text-align: center;
-    padding: 5rem 3rem;
-    border: 1px solid var(--outline);
-    background-color: white;
-    border-radius: 0.5rem;
+.form-field {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+  p{
+    padding-right: 10px;
   }
-  
+}

@@ -1,18 +1,14 @@
 import { useEffect, useState } from "react";
-import "./NewAppt.css";
 import {getBarbers} from "../Services/UserService.jsx";
 import { useNavigate, useParams } from "react-router-dom";
 import { createAppointment } from "../Services/NewApptService.jsx";
-import { getAppointmentById, getAppointments, updateAppointment } from "../Services/ScheduledApptService.jsx";
+import { getAppointmentById, updateAppointment } from "../Services/ScheduledApptService.jsx";
+
 
 
 export const EditDropDownAppointment = ({currentUser}) => {
 
   const [barbers, setBarbers] = useState([]);
-  const [selectedBarber, setSelectedBarber] = useState("");
-  const [selectedMonth, setSelectedMonth] = useState("")
-  const [selectedDay, setSelectedDay] = useState("")
-  const [selectedTime, setSelectedTime]= useState("")
   const [appointments, setAppointments] = useState({})
   
 
@@ -50,21 +46,12 @@ export const EditDropDownAppointment = ({currentUser}) => {
     });
   }, []);
 
-    const selectedBarberChange = (e) => {
-    setSelectedBarber(e.target.value);
-  };
-
-  const selectedMonthChange = (e) => {
-    setSelectedMonth(e.target.value);
-  };
-
-  const selectedDayChange = (e) => {
-    setSelectedDay(e.target.value);
-  };
-
-  const selectedTimeChange = (e) => {
-    setSelectedTime(e.target.value);
-  };
+ 
+  const handleInputChange = (event) => {
+    const stateCopy = { ...appointments }
+    stateCopy[event.target.name] = event.target.value
+    setAppointments(stateCopy)
+}
 
 
 
@@ -73,10 +60,10 @@ export const EditDropDownAppointment = ({currentUser}) => {
     const whateverMyHeartDesires = {
         id: updatedAppt,
         userId: currentUser.id,
-        barber: selectedBarber,
-        month: selectedMonth,
-        day: selectedDay,
-        time: selectedTime
+        barber: appointments.barber,
+        month: appointments.month,
+        day: appointments.day,
+        time: appointments.time
     }
     updateAppointment(whateverMyHeartDesires).then(() =>{navigate(`/newAppointment/${currentUser.id}`)})
 
@@ -92,8 +79,9 @@ export const EditDropDownAppointment = ({currentUser}) => {
       <div>
         <select required
           className="barber"
-          value={selectedBarber}
-          onChange={selectedBarberChange}
+          name="barber"
+          value={appointments.barber}
+          onChange={handleInputChange}
         >
           <option hidden disable value="0">{appointments?.barber}</option>
           {barbers.map((barber) => {
@@ -105,41 +93,41 @@ export const EditDropDownAppointment = ({currentUser}) => {
           })}
         </select>
 
-        <p>Barber: {selectedBarber} </p>
+        <p>Barber: {appointments.barber} </p>
       </div>
 
       <div>
       <label value="month"/>
-        <select required id="month" value={selectedMonth} onChange={selectedMonthChange}>
+        <select required name="month" value={appointments.month} onChange={handleInputChange}>
             <option value="">{appointments?.month}</option>
             {months.map((month, index) => (
             <option key={index} value={month}>{month}</option>
             ))}
         </select>
 
-        <p>Month: {selectedMonth}</p>
+        <p>Month: {appointments.month}</p>
       </div>
                 
       <div>
       <label value="day"/>
-        <select required id="day" value={selectedDay} onChange={selectedDayChange}>
+        <select required name="day" value={appointments.day} onChange={handleInputChange}>
             <option value="">{appointments?.day}</option>
             {days.map((day, index) => (
             <option key={index} value={day}>{day}</option>
             ))}
         </select>
-        <p>Day: {selectedDay}</p>
+        <p>Day: {appointments.day}</p>
       </div>
 
       <div>
       <label value="times"/>
-        <select required id="times" value={selectedTime} onChange={selectedTimeChange}>
+        <select required name="time" value={appointments.time} onChange={handleInputChange}>
             <option value="">{appointments?.time}</option>
             {timeSlots.map((time, index) => (
             <option key={index} value={time}>{time}</option>
             ))}
         </select>
-        <p>Time: {selectedTime}</p>
+        <p>Time: {appointments.time}</p>
       </div>
 
       <div>

@@ -31,7 +31,7 @@ useEffect(() => {
 
 
     return (
-        <div className="myschedule-container">
+        <div className="myschedule-container internal-container">
             <h1>
                 <span>Newark Barber Shop</span>
             </h1>
