@@ -1,13 +1,3 @@
-.myaccount-container {
-    margin: 2rem auto;
-    width: 60%;
-    text-align: center;
-    padding: 5rem 3rem;
-    border: 1px solid var(--outline);
-    border-radius: 0.5rem;
-    background-color: white;
-  }
-  
   /* This targets any h1 that is a child of an element with the .welcome-container class */
   .myaccount-container > h1 {
     display: flex;

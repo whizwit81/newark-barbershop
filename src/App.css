@@ -1,0 +1,10 @@
+.internal-container{
+    border-radius: 30px;
+    text-align: center;
+    padding: 5rem 3rem;
+    border: 1px solid var(--outline);
+    background-color: white;
+    margin: auto;
+    width: 60%;
+  }
+  

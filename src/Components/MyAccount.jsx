@@ -7,7 +7,7 @@ import { deleteAppointment } from "../Services/DeleteService.jsx";
 
 export const MyAccount = ({currentUser}) => {
 const [appointments, setAppointments] = useState([])
-const [userName, setUserName] = useState([])
+const [user, setUser] = useState({})
 
 const {appointmentId} = useParams()
 
@@ -15,7 +15,7 @@ const {appointmentId} = useParams()
 useEffect(() => {
     if(currentUser.id){
     getUsers(currentUser).then((data) => {
-        setUserName(data)
+        setUser(data)
             
     })}
 }, [currentUser])
@@ -42,17 +42,17 @@ useEffect(() => {
         })}
 
         return (
-            <div className="myaccount-container">
+            <div className="myaccount-container internal-container">
                 <h1>
                     <span>Newark Barber Shop</span>
                 </h1>
                 <div className="welcome-user">    
-                    <div key={userName.name}>Welcome {userName.name}!</div>
+                    <div key={user.name}>Welcome {user?.name}!</div>
                 </div>
                 <div>
                     <div className="user-appointments">
                         {appointments.length === 0 ? (
-                            <div><h2>You have no appointments scheduled</h2></div>
+                            <div><h2>You have no appointment scheduled</h2></div>
                         ) : (
                         appointments.map(appointment => (
                         <div key={appointment.id}>

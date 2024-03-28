@@ -7,7 +7,7 @@ import { createUser, getUserByEmail } from "../Services/UserService.jsx"
 export const Register = (props) => {
   const [customer, setCustomer] = useState({
     email: "",
-    fullName: ""
+    name: ""
   })
   let navigate = useNavigate()
 
@@ -18,7 +18,6 @@ export const Register = (props) => {
           "user",
           JSON.stringify({
             id: createdUser.id,
-            staff: createdUser.isStaff,
           })
         )
 
@@ -57,7 +56,7 @@ export const Register = (props) => {
             <input
               onChange={updateCustomer}
               type="text"
-              id="fullName"
+              id="name"
               className="form-control"
               placeholder="Enter your name"
               required
