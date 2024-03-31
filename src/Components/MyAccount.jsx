@@ -9,7 +9,6 @@ export const MyAccount = ({ currentUser }) => {
   const [appointments, setAppointments] = useState([]);
   const [user, setUser] = useState({});
 
-
   useEffect(() => {
     if (currentUser.id) {
       getUsers(currentUser).then((data) => {
@@ -28,14 +27,14 @@ export const MyAccount = ({ currentUser }) => {
   };
 
   useEffect(() => {
-    if(currentUser){
-        getAppointments().then((data) => {
-      const appointmentObj = data.filter(
-        (data) => data.userId === currentUser.id
-      );
-      setAppointments(appointmentObj);
-    
-    })};
+    if (currentUser) {
+      getAppointments().then((data) => {
+        const appointmentObj = data.filter(
+          (data) => data.userId === currentUser.id
+        );
+        setAppointments(appointmentObj);
+      });
+    }
   }, [currentUser]);
 
   const handleDelete = (apptparam, event) => {

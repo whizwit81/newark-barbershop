@@ -1,17 +1,17 @@
-.image-container{
+.image-container {
   border-radius: 30px;
-    text-align: center;
-    margin: auto;
-    width: 60%;
+  text-align: center;
+  margin: auto;
+  width: 60%;
 }
 
-.btn-container{
+.btn-container {
   display: flex;
   justify-content: center;
-  margin: -80px
+  margin: -80px;
 }
 
-.home-page-btn{
+.home-page-btn {
   padding: 1.6em 2.2em;
   font-size: 21px;
   margin-top: -15px;

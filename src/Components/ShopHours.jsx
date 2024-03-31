@@ -12,7 +12,6 @@ export const ShopHours = () => {
       </div>
 
       <div className="contact">
-
         <p className="phone-number">Phone number: 302-555-9988</p>
         <p>Address: 241 S Main st, Newark, DE 19711</p>
       </div>

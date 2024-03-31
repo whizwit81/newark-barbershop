@@ -15,7 +15,6 @@
   flex-basis: 20%;
   list-style-type: none;
   text-align: center;
-  
 }
 
 .navbar-link {
@@ -24,9 +23,7 @@
   font-size: x-large;
   font-weight: 800;
   color: darkgoldenrod;
-  font-family: 'Cinzel';
- 
-  
+  font-family: "Cinzel";
 }
 
 .navbar-logout {

@@ -1,14 +1,12 @@
-.internal-container{
-    border-radius: 30px;
-    text-align: center;
-    padding: 2rem;
-    border: 1px solid var(--outline);
-    background:rgba(0, 0, 0, 0.685);
-    margin: auto;
-    width: 60%;
-    font-family: 'Cinzel';
-    color: goldenrod;
-    font-weight: 800;
-  }
-  
-
+.internal-container {
+  border-radius: 30px;
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid var(--outline);
+  background: rgba(0, 0, 0, 0.685);
+  margin: auto;
+  width: 60%;
+  font-family: "Cinzel";
+  color: goldenrod;
+  font-weight: 800;
+}

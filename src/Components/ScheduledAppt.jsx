@@ -4,7 +4,7 @@ import { getAppointmentById } from "../Services/ScheduledApptService.jsx";
 import { useParams } from "react-router-dom";
 import "./ScheduledAppt.css";
 import { getUsers } from "../Services/UserService.jsx";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 export const MyScheduledAppt = ({ currentUser }) => {
   const [appointments, setAppointments] = useState([]);
@@ -21,10 +21,11 @@ export const MyScheduledAppt = ({ currentUser }) => {
   }, [currentUser]);
 
   useEffect(() => {
-    if(myscheduledappt){
-        getAppointmentById(myscheduledappt).then((data) => {
-      setAppointments([data]);
-    });}
+    if (myscheduledappt) {
+      getAppointmentById(myscheduledappt).then((data) => {
+        setAppointments([data]);
+      });
+    }
   }, [myscheduledappt]);
 
   return (
@@ -39,8 +40,12 @@ export const MyScheduledAppt = ({ currentUser }) => {
           {appointments.map((appointment) => {
             return (
               <div className="schedule-confirmation" key={appointment.id}>
-                You're scheduled with: <strong> {appointment.barber} on{" "}
-                {appointment.month} {appointment.day} at {appointment.time} </strong>
+                You're scheduled with:{" "}
+                <strong>
+                  {" "}
+                  {appointment.barber} on {appointment.month} {appointment.day}{" "}
+                  at {appointment.time}{" "}
+                </strong>
               </div>
             );
           })}
@@ -48,7 +53,10 @@ export const MyScheduledAppt = ({ currentUser }) => {
 
         <div className="confirmation-edit">
           <p>
-            To change or delete your appointment, go to <Link className ="navbar-link" to="/myAccount">My Account</Link>
+            To change or delete your appointment, go to{" "}
+            <Link className="navbar-link" to="/myAccount">
+              My Account
+            </Link>
           </p>
         </div>
       </div>

@@ -1,4 +1,4 @@
-.barber-header{
+.barber-header {
   display: flex;
   align-items: flex-start;
   flex-direction: row;
@@ -6,7 +6,7 @@
   margin-top: 3rem;
   justify-content: center;
 }
-.barbers{
+.barbers {
   background-color: rgba(0, 0, 0, 0.685);
   max-width: 20rem;
   padding: 20px;
@@ -18,50 +18,45 @@
   margin: 15px;
   border-radius: 5%;
   height: 34rem;
-  color: goldenrod
+  color: goldenrod;
+}
 
-  }
-  
-  /* This targets any h1 that is a child of an element with the .welcome-container class */
-  .barber-header > h1 {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: row;
-    flex-wrap: nowrap;
-  }
-  
-  /* This targets any div that is a child of an element with the .welcome-container class */
+.barber-header > h1 {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
 
-  .barbers-img {
-      width: 290px;
-      height: 230px;
-      border-radius: 5%;
-      object-fit: cover;
-  }
+.barbers-img {
+  width: 290px;
+  height: 230px;
+  border-radius: 5%;
+  object-fit: cover;
+}
 
-  .barber-name{
-    font-weight: bold;
-    font-size: 23px;
-  }
+.barber-name {
+  font-weight: bold;
+  font-size: 23px;
+}
 
-  .barber-field{
-    padding-top: 3px;
-    font-family: 'Cizel';
-    display: flex;
-    justify-content: center;
-  }
+.barber-field {
+  padding-top: 3px;
+  font-family: "Cizel";
+  display: flex;
+  justify-content: center;
+}
 
-  .barber-email a{
-    color: goldenrod;
-    font-size: x-large;
-    &:hover{
+.barber-email a {
+  color: goldenrod;
+  font-size: x-large;
+  &:hover {
     text-decoration: underline;
     color: blue;
-    }
   }
+}
 
-  .barber-bio{
-    height: 9rem;
-    font-size: 20px;
-
-  }
+.barber-bio {
+  height: 9rem;
+  font-size: 20px;
+}

@@ -28,7 +28,6 @@ export const createUser = (customer) => {
 
 export const NeededBarber = ({ barber }) => {
   return (
-    
     <div className="barbers">
       <div className="barber-info">
         <img className="barbers-img" src={barber?.img} />
