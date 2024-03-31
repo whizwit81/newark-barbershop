@@ -20,3 +20,11 @@ Local barber shop relies solely on walk in customers with no clear idea of how m
 
 ### As a customer, I should be able to cancel/delete my haircut appointment
 - Given the customer wants to cancle/delete their appointment, they can click on the trash can button next to their scheduled appointment on the "My Account" page. This will remove the scheduled appointment from the database.
+
+# WireFrame
+[Newark BarberShop WireFrame](https://miro.com/app/board/uXjVNjVEbh0=/?share_link_id=623580920238)
+
+# ERD Diagram
+[Newark BarberShop ERD Diagram](https://dbdiagram.io/d/Newark-Barber-Shop-65ca5977ac844320aefa5027)
+
+
