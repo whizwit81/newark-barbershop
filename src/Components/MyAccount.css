@@ -1,40 +1,40 @@
-.myaccount-container{
+.myaccount-container {
   font-size: large;
 }
 
-.welcome-user{
+.welcome-user {
   font-size: x-large;
   padding-bottom: 1rem;
 }
 
-.appointment-container{
+.appointment-container {
   width: 40rem;
 }
 
-.user-appointments{
+.user-appointments {
   text-align: center;
   margin-top: 1rem;
 
-  h2{
+  h2 {
     margin: 0;
   }
 }
 
-.appointment{
+.appointment {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 0;
   font-size: 23px;
 
-  button{
+  button {
     margin-top: 8px;
     margin-left: 10px;
     padding: 0px;
   }
 }
 
-.my-appointments{
+.my-appointments {
   text-align: center;
   font-size: 26px;
 }

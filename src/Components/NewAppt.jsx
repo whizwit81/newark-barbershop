@@ -117,17 +117,15 @@ export const NewAppointment = ({ currentUser }) => {
       month: selectedMonth,
       day: selectedDay,
       time: selectedTime,
-    
     };
-    createAppointment(whateverMyHeartDesires).then(async(data) => {
-      const apppointmentID = (await data.json()).id
+    createAppointment(whateverMyHeartDesires).then(async (data) => {
+      const apppointmentID = (await data.json()).id;
       navigate(`/newAppointment/${apppointmentID}`);
     });
   };
 
   return (
     <div className="appointment-container internal-container">
-
       <div className="newAppointment-image">
         <img
           className="welcome-image"
@@ -138,7 +136,7 @@ export const NewAppointment = ({ currentUser }) => {
       <h2>Schedule a haircut</h2>
 
       <div className="form-field">
-        <p>Barber:  </p>
+        <p>Barber: </p>
 
         <select
           className="barber"

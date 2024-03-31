@@ -7,31 +7,29 @@
   align-items: center;
   margin: -23px;
 
-
-
-  p{
+  p {
     padding-right: 10px;
     font-size: 25px;
     font-weight: 700;
   }
 
-  select{
+  select {
     padding: 5px;
     font-size: 14px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
-  .selcted-time{
+  .selcted-time {
     display: flex;
     flex-direction: column;
   }
 }
 
-h2{
+h2 {
   margin-top: -20px;
   font-size: xx-large;
 }
 
-.button-field{
+.button-field {
   margin-top: -28px;
   padding-bottom: 30px;
 }

@@ -130,7 +130,7 @@ export const EditDropDownAppointment = ({ currentUser }) => {
       <h2>Want to make change?</h2>
 
       <div className="form-field">
-          <p>Barber: </p>
+        <p>Barber: </p>
         <select
           required
           className="barber"
@@ -149,7 +149,6 @@ export const EditDropDownAppointment = ({ currentUser }) => {
             );
           })}
         </select>
-
       </div>
 
       <div className="form-field">
@@ -168,7 +167,6 @@ export const EditDropDownAppointment = ({ currentUser }) => {
             </option>
           ))}
         </select>
-
       </div>
 
       <div className="form-field">
