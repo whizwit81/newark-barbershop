@@ -30,6 +30,6 @@
   margin-left: auto;
 }
 
-/* .navbar-link:hover {
- 
-} */
+.navbar-link:hover {
+ text-decoration: underline;
+}

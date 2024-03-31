@@ -66,7 +66,7 @@ export const MyAccount = ({ currentUser }) => {
         ) : (
           appointments.map((appointment) => (
             <div className="appointment" key={appointment.id}>
-              <Link to={`/editAppointment/${appointment.id}`}>
+              <Link className ="navbar-link" to={`/editAppointment/${appointment.id}`}>
                 You're scheduled with: {appointment.barber} on{" "}
                 {appointment.month} {appointment.day} at {appointment.time}
               </Link>
