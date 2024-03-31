@@ -1,8 +1,12 @@
-# React + Vite
+### Problem Solved
+Local barber shop relies solely on walk in customers with no clear idea of how much business they'll have for the day. Suggesting a scheduling feature on their website will allow them to have a better understanding of forecasting as well as being able to now have a database of customers they can market to in the future.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Languages
+- HTML
+- CSS
+- Javascript
+- React
 
-Currently, two official plugins are available:
+### Project MVP
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## As a customer, I should be able to schedule an appointment
