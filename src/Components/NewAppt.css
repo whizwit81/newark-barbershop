@@ -5,8 +5,33 @@
   align-content: center;
   justify-content: center;
   align-items: center;
+  margin: -23px;
+
+
 
   p{
     padding-right: 10px;
+    font-size: 25px;
+    font-weight: 700;
   }
+
+  select{
+    padding: 5px;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .selcted-time{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+h2{
+  margin-top: -20px;
+  font-size: xx-large;
+}
+
+.button-field{
+  margin-top: -28px;
+  padding-bottom: 30px;
 }

@@ -6,9 +6,8 @@
   border: 5ex;
   /* margin: 3rem 5rem; */
   border-radius: 10px;
-  padding: 1rem 0rem 0rem 1rem;
   box-shadow: 1px 2px 5px lightgray;
-  background-color: rgb(99, 66, 5);
+  background-color: black;
   /* flex-direction: row; */
 }
 
@@ -21,10 +20,11 @@
 
 .navbar-link {
   text-decoration: none;
-  font-family: "Quicksand", sans-serif;
   letter-spacing: 1px;
   font-size: x-large;
+  font-weight: 800;
   color: darkgoldenrod;
+  font-family: 'Cinzel';
  
   
 }

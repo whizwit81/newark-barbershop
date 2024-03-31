@@ -15,6 +15,8 @@ export const BarberList = () => {
   }, []);
 
   return (
+
+    
     <div className="barber-header">
       {barbers.map((barberObj) => {
         return (

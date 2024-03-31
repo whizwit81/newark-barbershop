@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getBarbers } from "../Services/UserService.jsx";
 import { useNavigate, useParams } from "react-router-dom";
 import { createAppointment } from "../Services/NewApptService.jsx";
-import "./NewAppt.css"
+import "./NewAppt.css";
 
 export const NewAppointment = ({ currentUser }) => {
   const [barbers, setBarbers] = useState([]);
@@ -117,21 +117,28 @@ export const NewAppointment = ({ currentUser }) => {
       month: selectedMonth,
       day: selectedDay,
       time: selectedTime,
+    
     };
-    createAppointment(whateverMyHeartDesires).then(() => {
-      navigate(`/newAppointment/${currentUser.id}`);
+    createAppointment(whateverMyHeartDesires).then(async(data) => {
+      const apppointmentID = (await data.json()).id
+      navigate(`/newAppointment/${apppointmentID}`);
     });
   };
 
   return (
     <div className="appointment-container internal-container">
-      <h1>
-        <span>Newark Barber Shop</span>
-      </h1>
+
+      <div className="newAppointment-image">
+        <img
+          className="welcome-image"
+          src="./src/Images/NewarkBSsmall.png"
+          alt="website-log"
+        ></img>
+      </div>
       <h2>Schedule a haircut</h2>
 
       <div className="form-field">
-        <p>Barber: {selectedBarber} </p>
+        <p>Barber:  </p>
 
         <select
           className="barber"
@@ -150,7 +157,7 @@ export const NewAppointment = ({ currentUser }) => {
       </div>
 
       <div className="form-field">
-        <p>Month: {selectedMonth}</p>
+        <p>Month: </p>
 
         <label value="month" />
         <select id="month" value={selectedMonth} onChange={selectedMonthChange}>
@@ -164,7 +171,7 @@ export const NewAppointment = ({ currentUser }) => {
       </div>
 
       <div className="form-field">
-        <p>Day: {selectedDay}</p>
+        <p>Day:</p>
 
         <label value="day" />
         <select id="day" value={selectedDay} onChange={selectedDayChange}>
@@ -178,7 +185,7 @@ export const NewAppointment = ({ currentUser }) => {
       </div>
 
       <div className="form-field">
-        <p>Time: {selectedTime}</p>
+        <p>Time:</p>
 
         <label value="times" />
         <select id="times" value={selectedTime} onChange={selectedTimeChange}>
@@ -191,14 +198,14 @@ export const NewAppointment = ({ currentUser }) => {
         </select>
       </div>
 
-      <div>
+      <div className="button-field">
         <button
           className="submit_button"
           onClick={() => {
             submitNewAppointment();
           }}
         >
-          Save Appointment
+          Submit Appointment
         </button>
       </div>
     </div>

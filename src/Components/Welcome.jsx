@@ -1,22 +1,23 @@
-import { Link } from "react-router-dom"
-import"./Welcome.css"
+import { Link } from "react-router-dom";
+import "./Welcome.css";
 
 export const Welcome = () => {
-    return (
-        <div className="welcome-container internal-container">
-            <h1>
+  return (
+    <div className="welcome-container">
+     
+      <div className="image-container">
+        <img
+          className="welcome-image"
+          src="./src/Images/NewarkBS5.png"
+          alt="website-log"
+        ></img>
 
-                <span>Welcome to Newark Barber Shop</span>
-            </h1>
-            <div>
-                <h2>In Business since 1957</h2>
-                
-                </div>
+      </div>
         <div className="btn-container">
-            <Link to="/newAppointment">
-            <button className="btn btn-secondary">Schedule Haircut</button>
-            </Link>
+          <Link to="/newAppointment">
+            <button className="home-page-btn btn btn-secondary">Schedule Haircut</button>
+          </Link>
         </div>
-        </div>
-    )
-}
+    </div>
+  );
+};
