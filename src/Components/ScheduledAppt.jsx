@@ -1,54 +1,57 @@
 import { useEffect, useState } from "react";
-import { getAppointments } from "../Services/ScheduledApptService.jsx";
+import { getAppointmentById } from "../Services/ScheduledApptService.jsx";
 // import"./MyAccount.css"
 import { useParams } from "react-router-dom";
-import "./ScheduledAppt.css"
+import "./ScheduledAppt.css";
 import { getUsers } from "../Services/UserService.jsx";
+import { Link } from "react-router-dom"
 
+export const MyScheduledAppt = ({ currentUser }) => {
+  const [appointments, setAppointments] = useState([]);
+  const [userName, setUserName] = useState([]);
 
-export const MyScheduledAppt = ({currentUser}) => {
-const [appointments, setAppointments] = useState([])
-const [userName, setUserName] = useState([])
+  const { myscheduledappt } = useParams();
 
+  useEffect(() => {
+    if (currentUser.id) {
+      getUsers(currentUser).then((data) => {
+        setUserName(data);
+      });
+    }
+  }, [currentUser]);
 
-const {appointmentId} = useParams()
+  useEffect(() => {
+    if(myscheduledappt){
+        getAppointmentById(myscheduledappt).then((data) => {
+      setAppointments([data]);
+    });}
+  }, [myscheduledappt]);
 
-useEffect(() => {
-    if(currentUser.id){
-    getUsers(currentUser).then((data) => {
-        setUserName(data)
-            
-    })}
-}, [currentUser])
+  return (
+    <div className="myschedule-container internal-container">
+      <h1>
+        <span>Newark Barber Shop</span>
+      </h1>
 
-
-useEffect(() => {
-    getAppointments(appointmentId).then((data) => {
-        const appointmentObj = data.filter((data) => data.userId === currentUser.id)
-          setAppointments(appointmentObj);
-        });
-      }, [appointmentId]);
-
-
-    return (
-        <div className="myschedule-container internal-container">
-            <h1>
-                <span>Newark Barber Shop</span>
-            </h1>
-
-            <h2>You're all set!</h2>
-        <div>
-           
-           <div className="myschedule">{appointments.map(appointment => {
+      <h2>You're all set!</h2>
+      <div className="confirmation-container">
+        <div className="myschedule">
+          {appointments.map((appointment) => {
             return (
-                
-                <div key={appointment.id} >You're scheduled with: {appointment.barber} on {appointment.month}{appointment.day} at {appointment.time}</div>
-                
-            )
-           })}</div>
-          
+              <div className="schedule-confirmation" key={appointment.id}>
+                You're scheduled with: <strong> {appointment.barber} on{" "}
+                {appointment.month} {appointment.day} at {appointment.time} </strong>
+              </div>
+            );
+          })}
         </div>
 
+        <div className="confirmation-edit">
+          <p>
+            To change or delete your appointment, go to <Link className ="navbar-link" to="/myAccount">My Account</Link>
+          </p>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
